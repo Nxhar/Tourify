@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./story.css" />
+  <title>Story Telling</title>
+</head>
+
+<body>
+  <h1 class="title">
+    India: A Kaleidoscope of Time - From Ancient Myths to Modern Marvels
+  </h1>
+  <div>
+    <div class="card active">
+      <img src="https://i.etsystatic.com/22642648/r/il/7837dc/4211112651/il_fullxfull.4211112651_j1zv.jpg" alt="" />
+      <div class="card__content">
+        <p class="card__title">Rama Sita Marriage (Balakanda):</p>
+        <p class="card__description">
+          The epic begins with the marriage of Prince Rama, the seventh avatar
+          of Lord Vishnu, to Princess Sita, an incarnation of the goddess
+          Lakshmi. The marriage takes place in the kingdom of Ayodhya, and it
+          is a joyous occasion. However, due to political intrigue and family
+          complications, Rama is later forced into exile.
+        </p>
+        <button class="button" onclick="read(0)">Play Audio</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://www.artzolo.com/sites/default/files/uploads/multi/101/largest/lord_shiva.jpg" alt="" />
+      <div class="card__content">
+        <p class="card__title">Vanvas (Ayodhyakanda):</p>
+        <p class="card__description">
+          Following his father King Dasharatha's unintentional promise to
+          grant any two wishes to his stepmother Kaikeyi, Rama is ordered to
+          spend fourteen years in exile (Vanvas). Rama, accompanied by his
+          devoted wife Sita and loyal brother Lakshmana, willingly accepts the
+          exile and leaves Ayodhya.
+        </p>
+        <button class="button" onclick="read(1)">Play Audio</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://ramvangamanpath.com/img/upload-img/35(2).webp" alt="" />
+      <div class="card__content">
+        <p class="card__title">Sita Kidnapping (Aranyakanda):</p>
+        <p class="card__description">
+          While in the Dandaka forest during their exile, the demoness
+          Surpanakha encounters Rama and is attracted to him. When her
+          advances are rejected, she tries to harm Sita, prompting Lakshmana
+          to cut off her nose and ears. Seeking revenge, Surpanakha approaches
+          her brother Ravana, the demon king of Lanka. Ravana kidnaps Sita,
+          leading to the central conflict of the epic.
+        </p>
+        <button class="button" onclick="read(2)">Play Audio</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://qph.cf2.quoracdn.net/main-qimg-cab43cf37d8282d263e35c9c3a874d34-pjlq" alt="" />
+      <div class="card__content">
+        <p class="card__title">Hanuman Goes to Lanka (Kishkindhakanda):</p>
+        <p class="card__description">
+          In the search for Sita, Rama forms an alliance with Sugriva, the vanara (monkey) king, and his devoted
+          minister Hanuman. Hanuman, with his extraordinary powers, leaps across the ocean to reach Lanka. There, he
+          finds Sita in captivity and conveys Rama's message of hope and reassurance to her.
+        </p>
+        <button class="button" onclick="read(3)">Play Audio</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://www.youngisthan.in/wp-content/uploads/2018/08/featured-4-970x582.jpg" alt="" />
+    <div class="card__content">
+      <p class="card__title">War of Rama and Ravana (Yuddhakanda):</p>
+      <p class="card__description">
+        Rama gathers an army of allies, including vanaras and bears, to rescue Sita and confront Ravana. The epic
+        climaxes with the great war between the forces of Rama and Ravana. Hanuman plays a crucial role in this phase,
+        bringing the news of Sita's location, and the epic concludes with the defeat of Ravana by Rama.
+      </p>
+      <button class="button" onclick="read(4)">Play Audio</button>
+    </div>
+  </div>
+  </div>
+
+  <button class="next" onclick="play()">Next</button>
+  <script>
+    let count = 0;
+    const read = async (index) => {
+      count++;
+      if (count === 1) {
+        let text =
+          document.getElementsByClassName("card__description")[index]
+            .innerText;
+
+        const response = await fetch(`http://127.0.0.1:5000/audio/${text}`);
+        const audioData = await response.arrayBuffer();
+        playAudio(audioData);
+      }
+    };
+
+    function playAudio(audioData) {
+      const audioContext = new (window.AudioContext ||
+        window.webkitAudioContext)();
+      audioContext.decodeAudioData(audioData, function (buffer) {
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+      });
+    }
+
+    let count2 = 1;
+    let play = () => {
+      if(count2==5){alert("End of the Story")}
+      else{
+      let div = document.getElementsByClassName("card");
+      div[count2 - 1].classList.remove("active");
+      div[count2].classList.add("active");
+      count2++;
+      }
+    };
+  </script>
+</body>
+
+</html>

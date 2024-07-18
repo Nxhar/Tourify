@@ -1,0 +1,613 @@
+:root {
+    --primary: #9b51e0;
+    --purple: #8400ff;
+    --bgc : #e0cf98;
+  }
+
+.navContainer{
+    display: flex; 
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 14;
+}
+
+.navContainer .navText{
+    font-size: 35px;
+    font-weight: 600;
+    /* color: var(--primary); */
+    padding: 5px 10px;
+    border-radius:50px;
+    z-index: 226;
+    background-color: rgba(0,0,0, 0.2);
+    color: white;
+}
+.navbar .hamburger{
+    margin-left: auto;
+    z-index: 226;
+    background-color: rgba(0,0,0, 0.2);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+.navbar .hamburger:hover{
+    color: var(--primary);
+    transition: 0.3s ease;
+}
+
+.menuOverlay{
+    z-index: 2;
+}
+
+.menuContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    gap: 20px;
+    transition: 1s ease;
+    z-index: 225;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: var(--primary);
+    transition: 0.2s ease;
+}
+
+
+
+.microphone-container {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    height: 20vh;
+    align-items: center;
+    scale: 1.3;
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .microphone-icon {
+    position: relative; /* Added position: relative */
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  
+  .mic-body {
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 18px 18px 0 18px;
+    position: relative; /* Added position: relative */
+    z-index: 1; /* Added z-index to place it above the shine */
+  }
+  
+  .mic-stem {
+    width: 6px;
+    height: 15px;
+    background-color: #333;
+    margin: 0px auto 0;
+    position: relative; /* Added position: relative */
+    z-index: 1; /* Added z-index to place it above the shine */
+  }
+  
+  .shine {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 20%, transparent 80%);
+    opacity: 0;
+    transform: scale(0);
+    position: absolute; /* Changed position to absolute */
+    top: -30px; /* Adjusted position */
+    left: -30px; /* Adjusted position */
+    z-index: 1; /* Lower z-index to place it below the mic icon */
+    transition: transform 0.5s, opacity 0.5s;
+    
+  }
+  
+  .microphone-container.listening .shine {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+
+  .chatSpace{
+    width: 800px;
+    background-color: hsl(271, 70%, 60%);
+    display: flex;
+    padding: 15px 15px;  
+    align-items: center; 
+    color: #fff;
+    font-size: 20px;
+    gap: 20px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+
+
+  .chatIcon{
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+    border: 0.5px solid white;
+    border-radius: 100%;
+    background-color: #fff;
+  }
+
+  .container{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 30px;
+  }
+
+
+
+  .fading-carousel-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    z-index: -2;
+    opacity: 0.8;
+    
+  }
+  
+
+  .blackoverlay{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0.25;
+    top: 0
+  }
+
+  .carousel-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .carousel-slide.active {
+    opacity: 1;
+  }
+  
+
+  .homeContainer{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    margin-top: -78px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+
+  .mainHeader{
+    font-weight: 600;
+    color: white;
+    font-size: 120px;
+    
+  }
+
+  .mainDesc{
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 30px;
+    cursor:pointer;
+    text-decoration: none;
+  }
+
+  .mainDesc:hover{
+    background-color: #fff;
+    color: #000;
+    transition: 0.2s ease;
+  }
+
+  .secondContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+
+  .descriptiveText{
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    word-spacing: 3px;
+    margin-top: 30px;
+  }
+
+  .descriptiveHeading{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+
+
+
+
+
+
+
+  .carousel-container {
+  position: relative;
+  text-align: center;
+}
+
+.carousel {
+  width: 80%; /* Adjust the width of the carousel container */
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* Set the fixed width for each slide */
+  height: 100px; /* Set the fixed height for each slide */
+}
+
+.image {
+  width: 90%; /* Set the width of the image to 100% of the container */
+  height: 200px; /* Maintain the aspect ratio */
+  object-fit: cover; /* Crop the image to fit the specified dimensions */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+  margin-left: 5%;
+}
+
+.image-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+.map-container {
+  position: relative;
+  width: 500px; /* Adjust the width and height as needed */
+  height: 300px;
+}
+
+.pin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: blue; /* Change the color as needed */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.pin.hovered {
+  transform: scale(1.2);
+}
+
+.pin.clicked {
+  background-color: red; /* Change the color for clicked state */
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pin:hover .tooltip {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+.pins{
+  position: absolute;
+}
+.mapContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 40px;
+  margin-top: -50px;
+}
+
+.mapContainer img{
+  height: 600px;
+}
+
+.h2{
+  font-size: 60px;
+  text-align: center;
+  margin-top: -30px;
+  font-weight: 600;
+  color: white;
+}
+
+.telanganaDescription{
+  font-size: 25px;
+  width: 92.5vw;
+  padding: 20px 30px;
+  margin-top: 100px;
+  background-color: var(--bgc);
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 30px;
+  line-height: 35px;
+  word-spacing: 3px;margin-bottom: 20px;
+}
+
+.h2New{
+  font-size: 60px;
+  text-align: center; 
+  font-weight: 600;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+
+.timelessart{
+  /* margin-left: 80px; */
+  margin-right: 20px;
+  width: 100vw;
+  background: url('https://e0.pxfuel.com/wallpapers/105/658/desktop-wallpaper-books-and-india-aesthetic-india-aesthetic-indian-aesthetic-india-aesthetic.jpg') no-repeat center center fixed;
+  background-size: cover;
+  border-radius: 50px;
+}
+
+.art-wrapper {
+  width: 100vw;
+  border-radius: 50px; /* Adjust the border radius as needed */
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.art-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  padding-bottom: 70px; /* Adjust padding to prevent overlap with footer */
+}
+
+.art-item {
+  width: 45%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added box shadow effect */
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; /* Added transition effect */
+  background-color: #fff;
+  position: relative;
+}
+
+.art-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced box shadow on hover */
+}
+
+.art-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.art-description {
+padding: 15px;
+font-family: 'Montserrat', sans-serif;
+font-size: 16px;
+line-height: 1.5;
+color: #333;
+display: flex; /* Added flexbox */
+flex-direction: column; /* Stack children vertically */
+align-items: center; /* Center children horizontally */
+}
+.art-description h2 {
+font-family: 'Montserrat'; /* Use the same font as the header title */
+font-size: 30px; /* Increase font size for both header and art form titles */
+color: black; /* Maintain a consistent color for readability */
+
+margin-bottom: 10px; /* Add a bit of space below the title */
+text-align: center; /* Center the title text */
+text-transform: uppercase; /* Convert text to uppercase for a stylized look */
+text-shadow: 2px 2px 4px rgba(197, 66, 5, 0.5);
+}
+
+.learn-more {
+display: inline-block;
+padding: 8px 16px;
+background-color: #4CAF50;
+color: white;
+text-decoration: none;
+border-radius: 4px;
+transition: background-color 0.3s;
+margin-top: 10px; /* Add margin for spacing */
+}
+
+.learn-more:hover {
+background-color: #45a049;
+}
+
+
+.dish-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.dish-card {
+  width: 300px;
+  margin: 1em;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dish-card:hover {
+  transform: scale(1.05);
+}
+
+.dish-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.dish-info {
+  padding: 1em;
+}
+
+.dish-info h2 {
+  font-family: 'Georgia', serif;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 600px; /* Adjust the max-width as needed */
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto; /* Adjust the height as needed */
+  max-height: 400px; /* Set a maximum height for the popup image */
+  object-fit: contain;
+}
+
+.modal-info {
+  padding: 1em;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Tour{
+  text-align: center; 
+  font-size: 60px;
+}
+
+.Options{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  margin: 90px;
+  font-size: 25px;
+}
+
+.Options div:hover{
+  color: var(--primary);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
